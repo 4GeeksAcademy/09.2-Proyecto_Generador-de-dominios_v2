@@ -66,38 +66,55 @@ window.onload = function() {
     "sillon"
   ];
 
-  // Con forEach sacamos en cada uno de los arrays un elemento al azar, y lo vamos
-  // concatenandno con la variable "dominioFinal"
+  // **.com** Con forEach anidado vamos sacando la palabra con cada uno
+  // de los arrays correspondientes.
   pronombresElementos.forEach(() => {
     let pronombresRandomIndex = Math.floor(
       Math.random() * pronombresElementos.length
     );
     pronombres = pronombresElementos[pronombresRandomIndex];
+
+    adjetivosElementos.forEach(() => {
+      let adjetivosRandomIndex = Math.floor(
+        Math.random() * adjetivosElementos.length
+      );
+      adjetivos = adjetivosElementos[adjetivosRandomIndex];
+
+      sustantivosElementos.forEach(() => {
+        let sustantivosRandomIndex = Math.floor(
+          Math.random() * sustantivosElementos.length
+        );
+        sustantivos = sustantivosElementos[sustantivosRandomIndex];
+      });
+    });
+    dominioFinal = pronombres + adjetivos + sustantivos;
+    console.log("www." + dominioFinal + ".com");
   });
 
-  adjetivosElementos.forEach(() => {
-    let adjetivosRandomIndex = Math.floor(
-      Math.random() * adjetivosElementos.length
+  // **.es** Con forEach anidado vamos sacando la palabra con cada uno
+  // de los arrays correspondientes.
+  pronombresElementos.forEach(() => {
+    let pronombresRandomIndex = Math.floor(
+      Math.random() * pronombresElementos.length
     );
-    adjetivos = adjetivosElementos[adjetivosRandomIndex];
-  });
+    pronombres = pronombresElementos[pronombresRandomIndex];
 
-  sustantivosElementos.forEach(() => {
-    let sustantivosRandomIndex = Math.floor(
-      Math.random() * sustantivosElementos.length
-    );
-    sustantivos = sustantivosElementos[sustantivosRandomIndex];
-  });
+    adjetivosElementos.forEach(() => {
+      let adjetivosRandomIndex = Math.floor(
+        Math.random() * adjetivosElementos.length
+      );
+      adjetivos = adjetivosElementos[adjetivosRandomIndex];
 
-  sustantivosEsElementos.forEach(() => {
-    let sustantivosEsRandomIndex = Math.floor(
-      Math.random() * sustantivosEsElementos.length
-    );
-    sustantivosEs = sustantivosEsElementos[sustantivosEsRandomIndex];
+      sustantivosEsElementos.forEach(() => {
+        let sustantivosEsRandomIndex = Math.floor(
+          Math.random() * sustantivosEsElementos.length
+        );
+        sustantivosEs = sustantivosEsElementos[sustantivosEsRandomIndex];
+      });
+    });
+    dominioFinalEs = pronombres + adjetivos + sustantivosEs;
+    console.log("www." + dominioFinalEs + ".es");
   });
-
-  dominioFinal = pronombres + adjetivos + sustantivos;
-  dominioFinalEs = pronombres + adjetivos + sustantivosEs;
 
   let dominios = [dominioFinal, dominioFinalEs];
   let dominiosFinalesIndex = Math.floor(Math.random() * dominios.length);
